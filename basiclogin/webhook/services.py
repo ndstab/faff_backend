@@ -32,7 +32,7 @@ def get_contact_numbers(names):
 def send_message(to, message):
     url = "https://gate.whapi.cloud/messages/text"
     headers = {
-        "Authorization": "Bearer ePaUEt9L8RzS9gPdKoyI6GVJkRb57bnB",
+        "Authorization": "Bearer ePaUEt9L8RzS9gPdKoyI6GVJkRb57bnB", #use your own whapi key here
         "Content-Type": "application/json"
     }
     payload = {
