@@ -49,6 +49,7 @@ venv.bak/
 reminder_logs.txt
 crontab.txt
 *.sh
+!build.sh
 
 # Backup files
 *.bak

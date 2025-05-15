@@ -93,3 +93,15 @@ To set up automated reminders, a cron job is included:
 - `LIST` - List all tasks
 - `TASKS FOR Person` - List tasks for a specific person
 - `DONE task-id` - Mark a task as completed
+
+## Deployment Structure
+
+The project is structured for deployment on Render.com:
+
+- The root directory contains the main `requirements.txt` file with all dependencies
+- The Django application is in the `basiclogin` directory
+- `build.sh` handles installation of dependencies and database migrations
+- `render.yaml` defines the web service and database configuration
+- `Procfile` specifies how to run the application
+
+See `RENDER_DEPLOY.md` for detailed deployment instructions.

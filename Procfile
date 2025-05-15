@@ -1,2 +1,2 @@
-web: gunicorn basiclogin.wsgi:application
-release: python basiclogin/manage.py migrate
+web: cd basiclogin && gunicorn basiclogin.wsgi:application
+release: cd basiclogin && python manage.py migrate
