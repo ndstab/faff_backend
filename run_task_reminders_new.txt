@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Path to your project
+PROJECT_PATH="/Users/ndstab/Desktop/faff_backend"
+
+# Load environment variables
+if [ -f "$PROJECT_PATH/.env" ]; then
+    source "$PROJECT_PATH/.env"
+fi
+
+# Activate virtual environment
+source "$PROJECT_PATH/env/bin/activate"
+
+# Run the management command for 24-hour reminders
+python "$PROJECT_PATH/basiclogin/manage.py" send_task_reminders --hours=24
+
+# Run the management command for 6-hour reminders (for more urgent tasks)
+python "$PROJECT_PATH/basiclogin/manage.py" send_task_reminders --hours=6
+
+# Run the management command for 2-hour reminders (for very urgent tasks)
+python "$PROJECT_PATH/basiclogin/manage.py" send_task_reminders --hours=2
+
+# Run the management command for 1-hour reminders (for extremely urgent tasks)
+python "$PROJECT_PATH/basiclogin/manage.py" send_task_reminders --hours=1
+
+# Log the execution
+echo "$(date): Task reminders sent" >> "$PROJECT_PATH/reminder_logs.txt"

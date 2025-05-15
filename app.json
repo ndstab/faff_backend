@@ -1,0 +1,33 @@
+{
+  "name": "Faff Backend",
+  "description": "Task management system with WhatsApp integration",
+  "repository": "https://github.com/ndstab/faff_backend",
+  "keywords": ["python", "django", "task-management"],
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for Django",
+      "generator": "secret"
+    },
+    "DEBUG": {
+      "description": "Debug mode",
+      "value": "False"
+    },
+    "ALLOWED_HOSTS": {
+      "description": "Allowed hosts",
+      "value": ".herokuapp.com"
+    },
+    "TIME_ZONE": {
+      "description": "Application timezone",
+      "value": "Asia/Kolkata"
+    }
+  },
+  "scripts": {
+    "postdeploy": "python basiclogin/manage.py migrate"
+  }
+}
