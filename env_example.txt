@@ -1,0 +1,15 @@
+# Django settings
+SECRET_KEY=django-insecure-n(0euwa5bu=c4@r#1&skr_2&v&@!oxbi$$c0d@-9%kfqd+49kx
+DEBUG=True
+ALLOWED_HOSTS=*
+
+# Database settings
+DATABASE_ENGINE=django.db.backends.sqlite3
+DATABASE_NAME=db.sqlite3
+
+# API URLs
+API_BASE_URL=http://localhost:8001
+WEBHOOK_URL=http://localhost:8001/webhooks/messages
+
+# Timezone settings
+TIME_ZONE=Asia/Kolkata

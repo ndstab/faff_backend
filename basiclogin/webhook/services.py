@@ -1,4 +1,7 @@
+import json
+import os
 import requests
+from django.conf import settings
 from users.models import User, Task
 from datetime import datetime
 from django.utils.dateparse import parse_date
@@ -174,7 +177,8 @@ def mark_task_as_done(task_id, phone_number):
         clean_phone = phone_number.lstrip('+').strip()
         
         # Make a request to our own API
-        url = f"http://localhost:8001/api/tasks/{task_id}/complete/"
+        api_base_url = os.environ.get('API_BASE_URL', 'http://localhost:8001')
+        url = f"{api_base_url}/api/tasks/{task_id}/complete/"
         payload = {"phone_number": clean_phone}
         headers = {"Content-Type": "application/json"}
         
